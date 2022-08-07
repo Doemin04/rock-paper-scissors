@@ -36,8 +36,31 @@ function round(playerChoice, computerChoice){
     return "check spelling lmao";
     
 }
-let userChoice = prompt("rock or paper or scissors?").toLowerCase();
-let computerChoice = getComputerChoice();
-console.log("user: " + userChoice);
-console.log("computer: " + computerChoice);
-console.log(round(userChoice,computerChoice));
+
+let user = 0;
+let computer = 0;
+for (i = 1; i < 99; i++) {
+    console.log("round "+i);
+    let userChoice = prompt("rock or paper or scissors?").toLowerCase();
+    let computerChoice = getComputerChoice();
+    let result = round(userChoice,computerChoice);
+    if (result==="W choice"){
+        user++;
+    }
+    if (result==="L choice"){
+        computer++;
+    }
+    console.log("user: " + userChoice);
+    console.log("computer: " + computerChoice);
+    console.log(result);
+    console.log("user: " + user + "\ncomputer: " + computer)
+    if (user===5) {
+        console.log("you win");
+        break;
+    }
+    if (computer===5) {
+        console.log("you lose");
+        break;
+    }
+}
+
